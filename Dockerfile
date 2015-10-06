@@ -1,4 +1,4 @@
 FROM node:onbuild
 EXPOSE 8000
 
-RUN ./node_modules/.bin/gulp build
+CMD ./node_modules/.bin/gulp build && npm start
