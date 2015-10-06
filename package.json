@@ -1,28 +1,26 @@
 {
-  "name": "kingdom",
+  "name": "@kingdom/web",
   "version": "1.0.0",
-  "description": "A starter kit for react based applications",
+  "description": "The Kingdom web app.",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/babel-node both.js",
+    "start": "./node_modules/.bin/babel-node frontend.js",
     "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sventschui/react-starter-kit.git"
+    "url": "git+https://github.com/diversum/kingdom-web.git"
   },
   "keywords": [
-    "react",
-    "web",
-    "start",
-    "boilerplate"
+    "kingdom",
+    "web"
   ],
-  "author": "Sven Tschui <info@sventschui.ch>",
-  "license": "MIT",
+  "author": "Kingdom",
+  "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/sventschui/react-starter-kit/issues"
+    "url": "https://github.com/diversum/kingdom-web/issues"
   },
-  "homepage": "https://github.com/sventschui/react-starter-kit#readme",
+  "homepage": "https://github.com/diversum/kingdom-web#readme",
   "dependencies": {
     "alt": "^0.17.3",
     "babel": "^5.8.23",
@@ -52,8 +50,6 @@
     "lodash.throttle": "^3.0.4",
     "material-ui": "^0.12.1",
     "merge-stream": "^0.1.8",
-    "moment": "^2.10.6",
-    "mongodb": "^2.0.45",
     "react": "^0.13.3",
     "react-dom": "^0.14.0-rc1",
     "react-proxy": "^1.1.1",
