@@ -26,7 +26,6 @@ export default class Welcome extends React.Component {
 
     this.onUserProfileChange = this.onUserProfileChange.bind(this)
     this.onProcessStoreChange = this.onProcessStoreChange.bind(this)
-    this._handleNameChange = this._handleNameChange.bind(this)
     this._handleProceedToNumberOfPeople = this._handleProceedToNumberOfPeople.bind(this)
 
     stores.userProfile.listen(this.onUserProfileChange)
@@ -59,13 +58,6 @@ export default class Welcome extends React.Component {
         hintText='Arthur'
         value={this.state.userProfile.name} />
     }
-    // else if (this.state.process.processState == 'getName') {
-    //     challenge = <NameChallenge ref='nameChallenge'
-    //     onProceed={this._handleProceedToNumberOfPeople}
-    //     onChange={this._handleNameChange}
-    //     hintText='Arthur'
-    //     value={this.state.userProfile.name} />
-    // }
     else if (this.state.process.processState == 'getNumberOfPeople') {
       challenge = <PersonCountChallenge
         onNumberSelected={this._handlePersonCountSelection}
@@ -75,10 +67,6 @@ export default class Welcome extends React.Component {
       challenge = <SizeChallenge ref='sizeChallenge'
         onSizePreferenceSelected={this._handleSizePreferenceSelected}
         numberOfPeople={this.state.userProfile.numberOfPeople} />
-    }
-    else if (this.state.process.processState == 'getStairsStuff') {
-      challenge = <StairsChallenge
-        onStairsPreferenceSelected={this._handleStairsPreferenceSelected} />
     }
     else if (this.state.process.processState == 'getPriceIllusions') {
       challenge = <PriceChallenge
@@ -116,10 +104,6 @@ export default class Welcome extends React.Component {
     )
   }
 
-  _handleStart() {
-    actions.process.updateProcessState('getName')
-  }
-
   _handleProceedToNumberOfPeople() {
     actions.userProfile.updateName(this.refs.home.getValue())
     actions.process.updateProcessState('getNumberOfPeople')
@@ -132,7 +116,7 @@ export default class Welcome extends React.Component {
 
   _handleSizePreferenceSelected(preference) {
     actions.userProfile.updateSizePreference(preference)
-    actions.process.updateProcessState('getStairsStuff')
+    actions.process.updateProcessState('getPriceIllusions')
   }
 
   _handleStairsPreferenceSelected(preference) {
