@@ -99,7 +99,8 @@ export default class NameChallenge extends Component {
             <div className="sidebar__item__title__text" >Number of people</div>
           </div>
           <div className={classNames({'sidebar__item__content': true, 'sidebar__item__content--active': true})} >
-            <DropDownMenu menuItems={[1,2,3,4,5,6].map((val) => { return { payload: val, text: val } })} />
+            <DropDownMenu value={this.state.userProfile.numberOfPeople}
+              menuItems={[1,2,3,4,5,6].map((val) => { return { payload: val, text: val } })} />
           </div>
         </div>
 
@@ -111,7 +112,8 @@ export default class NameChallenge extends Component {
             <div className="sidebar__item__title__text" >Store pref</div>
           </div>
           <div className={classNames({'sidebar__item__content': true, 'sidebar__item__content--active': true})} >
-            <DropDownMenu menuItems={['coop', 'migros'].map((val) => { return { payload: val, text: val } })} />
+            <DropDownMenu value={this.state.userProfile.store}
+              menuItems={['coop', 'migros'].map((val) => { return { payload: val, text: val } })} />
           </div>
         </div>
 
@@ -154,10 +156,6 @@ export default class NameChallenge extends Component {
             </svg>
           </FloatingActionButton>
           <h1 className="sidebar__add-title">Add Rule to Kingdom</h1>
-        </div>
-        <div className="sidebar__resultCount">
-          <p>{this.state.flats.resultCount} Results</p>
-          <p>Error {this.state.flats.showError ? 'yup.. fuck it up again...' : 'lucky guy'}</p>
         </div>
       </div>
 
