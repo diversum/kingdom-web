@@ -17,9 +17,19 @@ export default class Home extends Component {
       <div className="welcome__container">
         <Logo large={true}/>
         <div className="welcome__h1">Your home is your castle, your block is your kingdom.</div>
-        <p className="welcome__introduction">We believe that moving to a new place doesn’t only depend on the flats size and the price, but also on the surrounding, your daily commute and many many more details. Our mission is to find you your new kingdom.</p>
+        <p className="welcome__introduction">What's your name, your honor?</p>
+        <div>
+          <TextField
+            className="welcome__text-answer"
+            hintText={this.props.hintText}
+            style={{fontSize: '1.5rem', color: 'white'}}
+            value={this.props.value}
+            ref='name'
+            onChange={this.props.onChange}
+            />
+        </div>
         <div className="welcome__button">
-          <RaisedButton label="Start finding your next kingdom!" onClick={this.props.onProceed} />
+          <RaisedButton label="Let's find your next kingdom!" onClick={this.props.onProceed} />
         </div>
       </div>
     )

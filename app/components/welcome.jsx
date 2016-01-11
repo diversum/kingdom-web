@@ -53,15 +53,19 @@ export default class Welcome extends React.Component {
   render() {
     var challenge = ''
     if (this.state.process.processState == 'home' || (this.state.process.state && this.state.process.state.processState == 'home')) {
-      challenge = <Home onProceed={this._handleStart} />
-    }
-    else if (this.state.process.processState == 'getName') {
-        challenge = <NameChallenge ref='nameChallenge'
+      challenge = <Home ref='home'
         onProceed={this._handleProceedToNumberOfPeople}
         onChange={this._handleNameChange}
         hintText='Arthur'
         value={this.state.userProfile.name} />
     }
+    // else if (this.state.process.processState == 'getName') {
+    //     challenge = <NameChallenge ref='nameChallenge'
+    //     onProceed={this._handleProceedToNumberOfPeople}
+    //     onChange={this._handleNameChange}
+    //     hintText='Arthur'
+    //     value={this.state.userProfile.name} />
+    // }
     else if (this.state.process.processState == 'getNumberOfPeople') {
       challenge = <PersonCountChallenge
         onNumberSelected={this._handlePersonCountSelection}
@@ -116,12 +120,8 @@ export default class Welcome extends React.Component {
     actions.process.updateProcessState('getName')
   }
 
-  _handleNameChange() {
-    // noop. moved to _handleProceedToNumberOfPeople
-  }
-
   _handleProceedToNumberOfPeople() {
-    actions.userProfile.updateName(this.refs.nameChallenge.getValue())
+    actions.userProfile.updateName(this.refs.home.getValue())
     actions.process.updateProcessState('getNumberOfPeople')
   }
 
