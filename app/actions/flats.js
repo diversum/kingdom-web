@@ -6,7 +6,7 @@ import apiBase from './utils/api-base'
 class FlatsActions {
 
   constructor() {
-    this.generateActions('showCompleted', 'showFailed')
+    this.generateActions('showCompleted', 'showFailed', 'dismissError')
   }
 
   show(profile) {
@@ -19,7 +19,6 @@ class FlatsActions {
     this.currentRequest = request
       .get(`${apiBase}/flats`);
 
-    console.log(profile.locations)
     for (var i = 0;i < profile.locations.length; i++){
       let station = {
         uic: profile.locations[i].location.uic,

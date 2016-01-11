@@ -11,6 +11,8 @@ class FlatsStore {
       list: [],
       erro: null,
       isLoading: false,
+      showError: false,
+      resultCount: null
     }
   }
 
@@ -27,14 +29,23 @@ class FlatsStore {
       list: list.hits,
       erro: null,
       isLoading: false,
+      resultCount: list.count,
     })
   }
 
   onShowFailed(err) {
     this.setState({
       list: [],
+      resultCount: null,
       erro: err,
       isLoading: false,
+      showError: true,
+    })
+  }
+
+  onDismissError() {
+    this.setState({
+      showError: false,
     })
   }
 }

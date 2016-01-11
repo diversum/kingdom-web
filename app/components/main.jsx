@@ -6,6 +6,7 @@ import Map from './map'
 import Sidebar from './sidebar'
 import Detail from './detail'
 import NewPanel from './new-panel'
+import FlatsError from './flats-error'
 import mui from 'material-ui'
 import {Dialog, Table,TableHeader,TableBody,TableRow,TableHeaderColumn,TableRowColumn,TextField, AppBar} from 'material-ui'
 import classNames from 'classnames'
@@ -16,16 +17,20 @@ export default class Main extends React.Component {
     super();
 
     this.state = {
-      detail: stores.detail,
-      newPanel: stores.newPanel,
+      detail: stores.detail.getState(),
+      newPanel: stores.newPanel.getState(),
+      flats: stores.flats.getState(),
     };
 
     stores.detail.listen(this.onChangeDetail.bind(this))
     stores.newPanel.listen(this.onChangeNewPanel.bind(this))
+    stores.flats.listen(this.onChangeFlats.bind(this))
   }
 
   componentWillUnmount() {
     stores.detail.unlisten(this.onChangeDetail)
+    stores.newPanel.unlisten(this.onChangeNewPanel)
+    stores.flats.unlisten(this.onChangeFlats)
   }
 
   onChangeDetail(detail) {
@@ -35,6 +40,14 @@ export default class Main extends React.Component {
       }
     } else if(this.refs.detail.isOpen()) {
       this.refs.detail.dismiss()
+    }
+  }
+
+  onChangeFlats(flats) {
+    if (flats.showError) {
+      this.refs.flatsError.show()
+    } else {
+      this.refs.flatsError.dismiss()
     }
   }
 
@@ -69,6 +82,13 @@ export default class Main extends React.Component {
             autoDetectWindowHeight={true}
             autoScrollBodyContent={true}>
             <NewPanel />
+          </Dialog>
+          <Dialog
+            ref="flatsError"
+            autoDetectWindowHeight={true}
+            autoScrollBodyContent={true}
+            openImmediately={this.state.flats.showError}>
+            <FlatsError  />
           </Dialog>
         </div>
       </div>

@@ -167,7 +167,12 @@ export default class NameChallenge extends Component {
           </FloatingActionButton>
           <h1 className="sidebar__add-title">Add Rule to Kingdom</h1>
         </div>
+        <div className="sidebar__resultCount">
+          <p>{this.state.flats.resultCount} Results</p>
+          <p>Error {this.state.flats.showError ? 'yup.. fuck it up again...' : 'lucky guy'}</p>
+        </div>
       </div>
+
     )
   }
 }
