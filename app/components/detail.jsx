@@ -170,7 +170,7 @@ export default class Detail extends Component {
           </div>
           <img
             className="details__image"
-  					src={ this.state.details.flatDetails.pictures[0] } />
+  					src={ this.state.details.flatDetails.realEstatePictures[0].url } />
           {this._renderInstagram()}
         </div>
 
