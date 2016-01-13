@@ -39,7 +39,7 @@
     "fbjs": "^0.2.1",
     "flux": "^2.1.1",
     "geolib": "^2.0.18",
-    "google-map-react": "^0.5.9",
+    "google-map-react": "0.5.9",
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
     "gulp-sourcemaps": "^1.5.2",
