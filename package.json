@@ -49,7 +49,7 @@
     "immutable": "^3.7.4",
     "lodash": "^3.10.1",
     "lodash.throttle": "^3.0.4",
-    "material-ui": "^0.12.1",
+    "material-ui": "0.12.1",
     "merge-stream": "^0.1.8",
     "react": "^0.13.3",
     "react-dom": "^0.14.0-rc1",
