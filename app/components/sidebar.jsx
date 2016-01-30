@@ -5,7 +5,7 @@ import classNames from 'classnames'
 
 const ThemeManager = Styles.ThemeManager
 
-export default class NameChallenge extends Component {
+export default class Sidebar extends Component {
 
   constructor(props) {
     super(props);
@@ -55,7 +55,7 @@ export default class NameChallenge extends Component {
     ];
 
     return (
-      <div>
+      <div className="main__sidebar__content">
         <AppBar
           title={'Hello ' + this.state.userProfile.name}
           showMenuIconButton={false} />
