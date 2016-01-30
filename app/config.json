@@ -1,5 +1,5 @@
 {
   "api": {
-    "endpoint": "https://kingdom_api.scapp.io"
+    "endpoint": "http://localhost:8001"
   }
 }

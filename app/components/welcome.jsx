@@ -97,9 +97,14 @@ export default class Welcome extends React.Component {
 
     return (
       <div className="welcome">
+        <div className="welcome__challenge" >
         {
           challenge
         }
+        </div>
+        <div className="welcome__powered-by" >
+          <a className="welcome__powered-by_link" href="http://homegate.ch" >powered by homegate.ch</a>
+        </div>
       </div>
     )
   }

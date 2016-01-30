@@ -64,6 +64,9 @@ export default class Main extends React.Component {
       <div className="main">
         <div className="main__sidebar" >
           <Sidebar />
+          <div className="main__sidebar__homegate" >
+            <a className="main__sidebar__homegate__link" href="http://homegate.ch" >powered by homegate.ch</a>
+          </div>
         </div>
         <div className="main__map">
           <Map />
